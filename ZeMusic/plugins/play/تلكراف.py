@@ -14,7 +14,6 @@ from datetime import datetime
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
-from .
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
@@ -41,7 +40,6 @@ async def _(tosh):
         os.makedirs(Config.TEMP_DIR)
         #     if BOTLOG:
         await tosh.client.send_message(
-            BOTLOG_CHATID,
             "**⌔∮ تم إنشاء حساب Telegraph جديد {} للدورة الحالية‌‌** \n**⌔∮ لا تعطي عنوان url هذا لأي شخص**".format(
                 auth_url
             ),
