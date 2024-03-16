@@ -41,7 +41,7 @@
       },
       "OWNER_ID": {
         "description": "ايدي المستخدم الذي ترغب في إضافته كمالك البوت",
-        "value": "5145609515",
+        "value": "",
         "required": true
       },
       "STRING_SESSION": {
@@ -62,7 +62,7 @@
       },
       "LOGGER_ID": {
         "description": "ايدي مجموعة السجل الخاص بك.",
-        "value": "-1001804181293",
+        "value": "",
         "required": true
       }
     },
