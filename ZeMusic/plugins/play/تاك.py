@@ -6,37 +6,11 @@ import aiohttp
 from strings.filters import command
 from pyrogram import filters
 from pyrogram import Client
-from pyrogram.types import Message, ChatMember, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from ZeMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from ZeMusic import app
 from asyncio import gather
 from pyrogram.errors import FloodWait
-from typing import List
-
-@app.on_message(filters.command(["مالك"]))
-async def show_owner_info(client: Client, message: Message):
-    # الحصول على قائمة الإداريين للمجموعة
-    chat_id = message.chat.id
-    admins: List[ChatMember] = await client.get_chat_members(chat_id, filter="administrators")
-
-    # البحث عن المالك بين قائمة الإداريين
-    for admin in admins:
-        if admin.status == "creator":
-            owner_id = admin.user.id
-            owner_info = await client.get_users(owner_id)
-
-            # إعداد الرد مع معلومات المالك
-            owner_text = f"👑 **معلومات المالك** 👑\n\n"
-            owner_text += f"اسم المالك: [{owner_info.first_name}](tg://user?id={owner_id})\n"
-            owner_text += f"معرف المالك: @{owner_info.username}\n"
-            owner_text += f"معرف المجموعة: {message.chat.title}"
-
-            # إرسال الرد
-            await message.reply_text(owner_text, parse_mode="markdown")
-            return
-
-    # إرسال رسالة في حالة عدم العثور على المالك
-    await message.reply_text("لا يمكن العثور على معلومات المالك في هذه المجموعة.")
 
    
 @app.on_message(command(["اسمي", "اسمي اي"]) & filters.group )
