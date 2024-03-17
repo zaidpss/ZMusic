@@ -7,8 +7,8 @@ from pyrogram import filters
 from pyrogram import Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from strings.filters import command
-from SedthonMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
-from SedthonMusic import app
+from ZeMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+from ZeMusic import app
 
 from asyncio import gather
 from pyrogram.errors import FloodWait
