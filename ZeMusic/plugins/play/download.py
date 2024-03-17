@@ -10,6 +10,7 @@ from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message, InputTextMessageContent
 from youtube_search import YoutubeSearch
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from ZeMusic import app
 from ZeMusic.plugins.play.filters import command
