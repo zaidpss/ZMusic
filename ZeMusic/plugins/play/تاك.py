@@ -12,24 +12,30 @@ from ZeMusic import app
 from asyncio import gather
 from pyrogram.errors import FloodWait
 
-@app.on_message(filters.command(["المالك"]))
+@app.on_message(filters.command(["مالك"]))
 async def show_owner_info(client, message):
-    # الحصول على معلومات المالك
+    # الحصول على قائمة الإداريين للمجموعة
     chat_id = message.chat.id
-    chat_info = await client.get_chat(chat_id)
-    owner_id = chat_info.owner_id
-    owner_info = await client.get_users(owner_id)
+    admins = await client.get_chat_members(chat_id, filter="administrators")
 
-    # إعداد الرد مع معلومات المالك
-    owner_text = f"👑 **معلومات المالك** 👑\n\n"
-    owner_text += f"اسم المالك: [{owner_info.first_name}](tg://user?id={owner_id})\n"
-    owner_text += f"معرف المالك: @{owner_info.username}\n"
-    owner_text += f"معرف المجموعة: {chat_info.title}"
+    # البحث عن المالك بين قائمة الإداريين
+    for admin in admins:
+        if admin.status == "creator":
+            owner_id = admin.user.id
+            owner_info = await client.get_users(owner_id)
 
-    # إرسال الرد
-    await message.reply_text(owner_text, parse_mode="markdown")
+            # إعداد الرد مع معلومات المالك
+            owner_text = f"👑 **معلومات المالك** 👑\n\n"
+            owner_text += f"اسم المالك: [{owner_info.first_name}](tg://user?id={owner_id})\n"
+            owner_text += f"معرف المالك: @{owner_info.username}\n"
+            owner_text += f"معرف المجموعة: {message.chat.title}"
 
+            # إرسال الرد
+            await message.reply_text(owner_text, parse_mode="markdown")
+            return
 
+    # إرسال رسالة في حالة عدم العثور على المالك
+    await message.reply_text("لا يمكن العثور على معلومات المالك في هذه المجموعة.")
 
    
 @app.on_message(command(["اسمي", "اسمي اي"]) & filters.group )
