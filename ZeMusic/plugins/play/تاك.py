@@ -12,28 +12,24 @@ from ZeMusic import app
 from asyncio import gather
 from pyrogram.errors import FloodWait
 
-@app.on_message(command(["المالك", "صاحب الخرابه", "المنشي"]) & filters.group)
-async def gak_owne(client: Client, message: Message):
-      if len(message.command) >= 2:
-         return 
-      else:
-            chat_id = message.chat.id
-            f = 'administrators'
-            async for member in client.iter_chat_members(chat_id, filter=f):
-               if member.status == "creator":
-                 id = member.user.id
-                 key = InlineKeyboardMarkup([[InlineKeyboardButton(member.user.first_name, user_id=id)]])
-                 m = await client.get_chat(id)
-                 if m.photo:
-                       photo = await app.download_media(m.photo.big_file_id)
-                       return await message.reply_photo(photo, caption=f"🧞‍♂️ ¦𝙽𝙰𝙼𝙴 :{m.first_name}\n🎯 ¦𝚄𝚂𝙴𝚁 :@{m.username}\n🎃 ¦𝙸𝙳 :`{m.id}`\n💌 ¦𝙱𝙸𝙾 :{m.bio}\n✨ ¦𝙲𝙷𝙰𝚃: {message.chat.title}\n♻️ ¦𝙸𝙳.𝙲𝙷𝙰𝚃 :`{message.chat.id}`",reply_markup=key)
-                 else:
-                    return await message.reply("• " + member.user.mention)
-                    
-                   
-                    
-                    
-   
+@app.on_message(filters.command(["المالك"]))
+async def show_owner_info(client, message):
+    # الحصول على معلومات المالك
+    chat_id = message.chat.id
+    chat_info = await client.get_chat(chat_id)
+    owner_id = chat_info.owner_id
+    owner_info = await client.get_users(owner_id)
+
+    # إعداد الرد مع معلومات المالك
+    owner_text = f"👑 **معلومات المالك** 👑\n\n"
+    owner_text += f"اسم المالك: [{owner_info.first_name}](tg://user?id={owner_id})\n"
+    owner_text += f"معرف المالك: @{owner_info.username}\n"
+    owner_text += f"معرف المجموعة: {chat_info.title}"
+
+    # إرسال الرد
+    await message.reply_text(owner_text, parse_mode="markdown")
+
+
 
    
 @app.on_message(command(["اسمي", "اسمي اي"]) & filters.group )
