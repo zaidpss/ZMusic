@@ -58,6 +58,14 @@ async def song_downloader(client, message: Message):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
         await m.edit("<b>⇜ جـارِ التحميل ▬▬ . . .</b>")
+        keyboard = InlineKeyboardMarkup(
+            [
+                [
+                   InlineKeyboardButton(
+                        "‹ السورس ›", url=f"https://t.me/EF_19")
+                ]
+           ]
+        )
         await message.reply_audio(
             audio=audio_file,
             caption=rep,
@@ -65,6 +73,7 @@ async def song_downloader(client, message: Message):
             performer=host,
             thumb=thumb_name,
             duration=dur,
+            reply_markup=keyboard,
         )
         await m.delete()
 
