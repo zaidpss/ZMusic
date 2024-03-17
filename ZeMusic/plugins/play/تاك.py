@@ -18,7 +18,7 @@ async def gak_owne(client: Client, message: Message):
          return 
       else:
             chat_id = message.chat.id
-            f = "administrators"
+            f = ChatMembersFilter.ADMINISTRATORS
             async for member in client.get_chat_members(chat_id, filter=f):
                if member.status == "creator":
                  id = member.user.id
