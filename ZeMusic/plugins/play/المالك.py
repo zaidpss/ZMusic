@@ -19,21 +19,24 @@ from random import  choice, randint
   command(["مطور","المطور"])
 )
 async def huhh(client: Client, message: Message):
+    # افتراضياً، لنفترض أن "us_id" هو ايدي المستخدم للمطور
+    us_id = "123456789"  # استبدل بالقيمة الفعلية لايدي المطور
+
+    # احصل على معلومات المطور باستخدام الايدي المحدد
+    # يمكنك استبدال الطريقة التي تحصل بها على معلومات المطور بوظيفة أخرى
+    developer_info = await client.get_users(us_id)
+
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/1a77a02bdb06d55051845.jpg",
-        caption=f"""<b>⌯ 𝙽𝙰𝙼𝙴 :</b> <a href="https://t.me/IC_19">『 🇾🇪⃤𝐀𝐁𝐃𝐔𝐋𝐋𝐀𝐇 个 ١9 』</a>
+        photo=developer_info.photo.big_file_id,
+        caption=f"""<b>⌯ المطور :</b> <a href="tg://user?id={us_id}">{developer_info.first_name}</a>
         
-<b>⌯ 𝙱𝙸𝙾  :</b> ـ ی‍‌ت‍‌ع‍‌افی ال‍‌م‍‌رء ب‍‌ال‍‌له ف‍‌ق‍‌ط‍‌ >ᯓ𓆰᭼١9""",
+<b>⌯ معرف المطور :</b> @{developer_info.username}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "『 🇾🇪⃤𝐀𝐁𝐃𝐔𝐋𝐋𝐀𝐇 个 ١9 』", url=f"https://t.me/IC_19"), 
-                 ],[
-                   InlineKeyboardButton(
-                        "『 𝙺𝙸𝙽𝙶 𝚂𝙾𝚄𝚁𝙲𝙴 』", url=f"https://t.me/EF_19"),
-                ],
-
+                        "المطور", url=f"https://t.me/{developer_info.username}"), 
+                 ],
             ]
 
         ),
