@@ -66,20 +66,7 @@ async def song_downloader(client, message: Message):
             performer=host,
             thumb=thumb_name,
             duration=dur,
-        )
-        await m.delete()
-
-    except Exception as e:
-        await m.edit(" error, wait for bot owner to fix")
-        print(e)
-
-    try:
-        remove_if_exists(audio_file)
-        remove_if_exists(thumb_name)
-    except Exception as e:
-        print(e)
-
-reply_markup=InlineKeyboardMarkup(
+            reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
@@ -99,5 +86,15 @@ reply_markup=InlineKeyboardMarkup(
             ]
 
         ),
+        )
+        await m.delete()
 
-)
+    except Exception as e:
+        await m.edit(" error, wait for bot owner to fix")
+        print(e)
+
+    try:
+        remove_if_exists(audio_file)
+        remove_if_exists(thumb_name)
+    except Exception as e:
+        print(e)
