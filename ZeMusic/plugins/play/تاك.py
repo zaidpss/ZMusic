@@ -4,7 +4,6 @@ import time
 import requests
 import aiohttp
 from strings.filters import command
-from pyrogram import ChatMembersFilter
 from pyrogram import filters
 from pyrogram import Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
@@ -19,8 +18,8 @@ async def gak_owne(client: Client, message: Message):
          return 
       else:
             chat_id = message.chat.id
-            f = ChatMembersFilter.ADMINISTRATORS
-            async for member in client.get_chat_members(chat_id, filter=f):
+            f = 'administrators'
+            async for member in client.iter_chat_members(chat_id, filter=f):
                if member.status == "creator":
                  id = member.user.id
                  key = InlineKeyboardMarkup([[InlineKeyboardButton(member.user.first_name, user_id=id)]])
@@ -31,6 +30,7 @@ async def gak_owne(client: Client, message: Message):
                  else:
                     return await message.reply("• " + member.user.mention)
                     
+                   
                     
                     
    
