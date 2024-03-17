@@ -8,7 +8,7 @@ import yt_dlp
 from yt_dlp import YoutubeDL
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
-from pyrogram.types import Message, InputTextMessageContent
+from pyrogram.types import Message, InputTextMessageContent, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from youtube_search import YoutubeSearch
 
 from ZeMusic import app
@@ -78,3 +78,26 @@ async def song_downloader(client, message: Message):
         remove_if_exists(thumb_name)
     except Exception as e:
         print(e)
+
+reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "", url=f"https://t.me/IC_19"), 
+                    
+                
+                    InlineKeyboardButton(
+                        "", url=f"https://t.me/IC_19"),
+                ],[
+                    
+                
+                    InlineKeyboardButton(
+                        "‹ السورس ›", url=f"https://t.me/EF_19"),
+                
+        ],
+
+            ]
+
+        ),
+
+)
