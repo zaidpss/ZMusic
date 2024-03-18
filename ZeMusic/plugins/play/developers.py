@@ -20,6 +20,7 @@ from random import  choice, randint
 )
 async def huhh(client: Client, message: Message):
     dev = 5145609515
+    usr = await client.get_users(dev)
     name = dev.first_name
     usrnam = dev.username
     await app.download_media(dev.photo.big_file_id, file_name=os.path.join("downloads", "developer.jpg"))
