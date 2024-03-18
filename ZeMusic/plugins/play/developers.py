@@ -22,7 +22,7 @@ async def huhh(client: Client, message: Message):
     dev = 5145609515
     name = dev.first_name
     usrnam = dev.username
-     await app.download_media(dev.photo.big_file_id, file_name=os.path.join("downloads", "developer.jpg"))
+    await app.download_media(dev.photo.big_file_id, file_name=os.path.join("downloads", "developer.jpg"))
    
     await message.reply_photo(
         photo="downloads/developer.jpg",
