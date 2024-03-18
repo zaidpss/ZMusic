@@ -16,19 +16,24 @@ from random import  choice, randint
 #          
                 
 @app.on_message(
-  command(["مطور","مطور السورس","مبرمج السورس","المطور"])
+  command(["مطور اساسي","مطور السورس","مبرمج السورس","المطور الاساسي", "مطور ثانوي", "المطور الثانوي"])
 )
 async def huhh(client: Client, message: Message):
+    dev = 5145609515
+    name = dev.first_name
+    usrnam = dev.username
+     await app.download_media(dev.photo.big_file_id, file_name=os.path.join("downloads", "developer.jpg"))
+   
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/1a77a02bdb06d55051845.jpg",
-        caption=f"""<b>⌯ 𝙽𝙰𝙼𝙴 :</b> <a href="https://t.me/IC_19">『 🇾🇪⃤𝐀𝐁𝐃𝐔𝐋𝐋𝐀𝐇 个 ١9 』</a>
+        photo="downloads/developer.jpg",
+        caption=f"""<b>⌯ 𝙽𝙰𝙼𝙴 :</b> <a href="https://t.me/{usrnam}">{name}</a>
         
 <b>⌯ 𝙱𝙸𝙾  :</b> ـ ی‍‌ت‍‌ع‍‌افی ال‍‌م‍‌رء ب‍‌ال‍‌له ف‍‌ق‍‌ط‍‌ >ᯓ𓆰᭼١9""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "『 🇾🇪⃤𝐀𝐁𝐃𝐔𝐋𝐋𝐀𝐇 个 ١9 』", url=f"https://t.me/IC_19"), 
+                         name, url=f"https://t.me/{usrnam}"), 
                  ],[
                    InlineKeyboardButton(
                         "『 𝙺𝙸𝙽𝙶 𝚂𝙾𝚄𝚁𝙲𝙴 』", url=f"https://t.me/EF_19"),
