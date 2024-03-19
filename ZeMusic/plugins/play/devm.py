@@ -15,6 +15,7 @@ async def zdatsr(client: Client, message: Message):
     usr = await client.get_users(OWNER_ID)
     name = usr.first_name
     usrnam = usr.username
+    uid = OWNER_ID
     await app.download_media(usr.photo.big_file_id, file_name=os.path.join("downloads", "developer.jpg"))
        
     await message.reply_photo(
@@ -36,7 +37,7 @@ async def zdatsr(client: Client, message: Message):
                     InlineKeyboardButton(
                         "", callback_data="zzzdv"),
                 ],[
-                    InlineKeyboardButton(name, url=f"https://t.me/{usrnam}"),
+                    InlineKeyboardButton(name, url=f"tg://user?id={uid}"),
                 ],[
                     InlineKeyboardButton(
                         "•✯  السورس  ✯•", url="https://t.me/EF_19"),
