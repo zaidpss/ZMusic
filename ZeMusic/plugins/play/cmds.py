@@ -32,10 +32,8 @@ async def zdatsr(client: Client, message: Message):
                     InlineKeyboardButton(
                         "• اوامــر المطــور •", callback_data="zzzdv"),
                 ],[
-                    InlineKeyboardButton(name, url=f"https://t.me/{usrnam}"),
-                ],[
                     InlineKeyboardButton(
-                        "•✯ 『 𝙺𝙸𝙽𝙶 𝙼𝚄𝚂𝙸𝙲 』 ✯•", url="https://t.me/EF_19"),
+                        "•✯ 𝙺𝙸𝙽𝙶 𝙼𝚄𝚂𝙸𝙲 ✯•", url="https://t.me/EF_19"),
                 ],
             ]
         ),
