@@ -11,7 +11,7 @@ from config import OWNER_ID, LOGGER_ID
 
 
 @app.on_message(command(["مطور", "", "المطور"]))
-async def zdatsr(client: Client, message: Message):
+async def devid(client: Client, message: Message):
     usr = await client.get_users(OWNER_ID)
     name = usr.first_name
     usrnam = usr.username
@@ -21,21 +21,10 @@ async def zdatsr(client: Client, message: Message):
        
     await message.reply_photo(
         photo="downloads/developer.jpg",
-        caption=f"""<b>⌯ 𝙽𝙰𝙼𝙴 :</b> <a href="https://t.me/{usrnam}">{name}</a>\n\n<b>⌯ 𝙱𝙸𝙾 :</b> {bio}""",
+        caption=f"""<b>⌯ 𝙽𝙰𝙼𝙴 :</b> <a href='tg://user?id={uid}'>{name}</a>\n\n<b>⌯ 𝙱𝙸𝙾 :</b> {bio}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(
-                        "", callback_data="zzzll"),
-                ],[
-                    InlineKeyboardButton(
-                        "", callback_data="zzzch"),
-                    InlineKeyboardButton(
-                        "", callback_data="zzzad"),
-                ],[
-                    InlineKeyboardButton(
-                        "", callback_data="zzzdv"),
-                ],[
                     InlineKeyboardButton(name, url=f"tg://user?id={uid}"),
                 ],[
                     InlineKeyboardButton(
