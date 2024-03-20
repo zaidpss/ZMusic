@@ -17,10 +17,6 @@ def start_panel(_):
             InlineKeyboardButton(text="『 المطور 』", user_id=config.OWNER_ID),
             InlineKeyboardButton(text="『 السورس 』", url=config.SUPPORT_CHANNEL),
         ],
-        [
-         
-            InlineKeyboardButton(text="『 🇾🇪⃤𝐀𝐁𝐃𝐔𝐋𝐋𝐀𝐇 个 ١9 』", url=f"https://t.me/IC_19"),
-        ],
     ]
     return buttons
 
@@ -37,10 +33,6 @@ def private_panel(_):
         [
             InlineKeyboardButton(text="『 المطور 』", user_id=config.OWNER_ID),
             InlineKeyboardButton(text="『 السورس 』", url=config.SUPPORT_CHANNEL),
-        ],
-        [
-         
-            InlineKeyboardButton(text="『 🇾🇪⃤𝐀𝐁𝐃𝐔𝐋𝐋𝐀𝐇 个 ١9 』", url=f"https://t.me/IC_19"),
         ],
     ]
     return buttons
