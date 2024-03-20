@@ -70,18 +70,8 @@ async def song_downloader(client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "", url=f"https://t.me/IC_19"), 
-                    
-                
-                    InlineKeyboardButton(
-                        "", url=f"https://t.me/IC_19"),
-                ],[
-                    
-                
-                    InlineKeyboardButton(
                         "‹ السورس ›", url=f"https://t.me/EF_19"),
-                
-        ],
+                ],
 
             ]
 
