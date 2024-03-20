@@ -15,13 +15,12 @@ async def devid(client: Client, message: Message):
     usr = await client.get_users(OWNER_ID)
     name = usr.first_name
     usrnam = usr.username
-    bio = usr.bio
     uid = OWNER_ID
     await app.download_media(usr.photo.big_file_id, file_name=os.path.join("downloads", "developer.jpg"))
        
     await message.reply_photo(
         photo="downloads/developer.jpg",
-        caption=f"""<b>⌯ 𝙽𝙰𝙼𝙴 :</b> <a href='tg://user?id={uid}'>{name}</a>\n\n<b>⌯ 𝙱𝙸𝙾 :</b> {bio}""",
+        caption=f"""<b>⌯ 𝙽𝙰𝙼𝙴 :</b> <a href='tg://user?id={uid}'>{name}</a>\n\n<b>⌯ 𝚄𝚂𝙴𝚁𝙽𝙰𝙼𝙴 :</b> {usrnam}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
