@@ -15,7 +15,6 @@ async def zdatsr(client: Client, message: Message):
     usr = await client.get_users(OWNER_ID)
     name = usr.first_name
     usrnam = usr.username
-    bio = usr.bio
     uid = OWNER_ID
     await app.download_media(usr.photo.big_file_id, file_name=os.path.join("downloads", "developer.jpg"))
        
@@ -23,7 +22,7 @@ async def zdatsr(client: Client, message: Message):
         photo="downloads/developer.jpg",
         caption=f"""<b>⌯ 𝙽𝙰𝙼𝙴 :</b> <a href="https://t.me/{usrnam}">{name}</a>
 
-<b>⌯ 𝙱𝙸𝙾 :</b> {bio}""",
+<b>⌯ 𝚄𝚂𝙴𝚁𝙽𝙰𝙼𝙴 :</b> {usrnam}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
