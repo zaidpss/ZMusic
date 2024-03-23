@@ -24,9 +24,13 @@ async def on_new_chat_members(client: Client, message: Message):
         matlabi_jhanto = message.chat.title
         served_chats = len(await get_served_chats())
         chat_id = message.chat.id
+
+        chat = await client.get_chat(int(chat_id))
+        cont = chat.members_count
+        
         if message.chat.username:
             chatusername = f"@{message.chat.username}"
         else:
             chatusername = "ᴩʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ"
-        lemda_text = f"🌹 ʙᴏᴛ ᴀᴅᴅᴇᴅ ᴛᴏ ɴᴇᴡ ɢʀᴏᴜᴘ ..\n\n┏━━━━━━━━━━━━━━━━━┓\n┣★ <b>ᴄʜᴀᴛ</b> › :<a href='tg://user?id={chat_id}'> {matlabi_jhanto}</a>\n┣★ <b>ᴄʜᴀᴛ ɪᴅ</b> › : {chat_id}\n┣★ <b>ᴄʜᴀᴛ ᴜɴᴀᴍᴇ</b> › : {chatusername}\n┣★ <b>ᴛᴏᴛᴀʟ ᴄʜᴀᴛ</b> › : {served_chats}\n┣★ <b>ᴀᴅᴅᴇᴅ ʙʏ</b> › :\n┗━━━ <a href='tg://user?id={added_id}'>{added_by}</a>"
+        lemda_text = f"🌹 تمت اضافه البوت الى مجموعه جديدة .\n\n┏━━━━━━━━━━━━━━━━━┓\n┣★ <b>𝙲𝙷𝙰𝚃</b> › : {matlabi_jhanto}\n┣★ <b>𝙲𝙷𝙰𝚃 𝙸𝙳</b> › : {chat_id}\n┣★ <b>𝙲𝙷𝙰𝚃 𝚄𝙽𝙰𝙼𝙴</b> › : {chatusername}\n┣★ <b>𝙲𝙾𝚄𝙽𝚃</b> › : {cont}\n┣★ <b>𝚃𝙾𝚃𝙰𝙻 𝙲𝙷𝙰𝚃</b> › : {served_chats}\n┣★ <b>𝙰𝙳𝙳𝙴𝙳 𝙱𝚈</b> › :\n┗━━━ꪜ <a href='tg://user?id={added_id}'>{added_by}</a>"
         await lul_message(LOGGER_ID, lemda_text)
