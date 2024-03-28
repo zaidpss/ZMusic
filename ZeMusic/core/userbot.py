@@ -47,7 +47,7 @@ class Userbot(Client):
         )
 
     async def start(self):
-        LOGGER(__name__).info(f"Starting Assistants...")
+        LOGGER(__name__).info(f"جلب معلومات السورس...")
         if config.STRING1:
             await self.one.start()
             try:
@@ -67,7 +67,7 @@ class Userbot(Client):
             self.one.name = self.one.me.mention
             self.one.username = self.one.me.username
             assistantids.append(self.one.id)
-            LOGGER(__name__).info(f"تم تنصيب البوت على سورس الملك بنجاح 🥂🫀 as {self.one.name}")
+            LOGGER(__name__).info(f"تم تشغيل المساعد {self.one.name} على سورس الملك")
 
         if config.STRING2:
             await self.two.start()
