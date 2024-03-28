@@ -63,7 +63,7 @@ async def sudo():
     if sudoers:
         for user_id in sudoers:
             SUDOERS.add(user_id)
-    LOGGER(__name__).info(f"Sudoers Loaded.")
+    LOGGER(__name__).info(f"تم رفع البيانات.")
 
 
 def heroku():
@@ -73,7 +73,7 @@ def heroku():
             try:
                 Heroku = heroku3.from_key(config.HEROKU_API_KEY)
                 HAPP = Heroku.app(config.HEROKU_APP_NAME)
-                LOGGER(__name__).info(f"Heroku App Configured")
+                LOGGER(__name__).info(f"تم تكوين التطبيق.")
             except BaseException:
                 LOGGER(__name__).warning(
                     f"Please make sure your Heroku API Key and Your App name are configured correctly in the heroku."
