@@ -7,7 +7,7 @@ from strings.filters import command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from pyrogram.errors import MessageNotModified
 from ZeMusic import app
-from config import OWNER_ID, LOGGER_ID
+from config import OWNER_ID, LOGGER_ID, START_IMG_URL
 
 
 @app.on_message(command(["ميوزك", "الميوزك", "الاوامر"]))
@@ -16,7 +16,7 @@ async def zdatsr(client: Client, message: Message):
     name = usr.first_name
     usrnam = usr.username
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/1a77a02bdb06d55051845.jpg",
+        photo=START_IMG_URL,
         caption=f"""<b>» مرحبـاً بك عـزيـزي </b> {message.from_user.mention} .\n\n<b>» استخـدم الازرار بالاسفـل 𝄞\n» لـ تصفـح اوامـر الميـوزك 🥁</b>""",
         reply_markup=InlineKeyboardMarkup(
             [
