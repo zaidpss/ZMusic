@@ -12,7 +12,7 @@ def start_panel(_):
                 url=f"https://t.me/{app.username}?startgroup=true",
             )
         ],
-        [InlineKeyboardButton(text="⌯ الأوامر ⌯", callback_data="settings_back_helper")],
+        [InlineKeyboardButton(text="⌯ الأوامر ⌯", callback_data="zzzback")],
         [
             InlineKeyboardButton(text="⌯ المطور ⌯", user_id=config.OWNER_ID),
             InlineKeyboardButton(text="⌯ 𝙺𝙸𝙽𝙶 𝚂𝚄𝙾𝚁𝙲𝙴 ⌯", url=config.SUPPORT_CHANNEL),
@@ -29,7 +29,7 @@ def private_panel(_):
                 url=f"https://t.me/{app.username}?startgroup=true",
             )
         ],
-        [InlineKeyboardButton(text="⌯ الأوامر ⌯", callback_data="settings_back_helper")],
+        [InlineKeyboardButton(text="⌯ الأوامر ⌯", callback_data="zzzback")],
         [
             InlineKeyboardButton(text="⌯ المطور ⌯", user_id=config.OWNER_ID),
             InlineKeyboardButton(text="⌯ 𝙺𝙸𝙽𝙶 𝚂𝚄𝙾𝚁𝙲𝙴 ⌯", url=config.SUPPORT_CHANNEL),
