@@ -17,10 +17,9 @@ from config import BANNED_USERS, adminlist
 @app.on_message(filters.command(["auth","رفع ادمن"]) & filters.group & ~BANNED_USERS)
 @AdminActual
 async def auth(client, message: Message, _):
-    #if not message.reply_to_message:
-        #if len(message.command) != 3:
-        #if len(message.command) != 2 or len(message.command) != 3:
-            #return await message.reply_text(_["general_1"])
+    if not message.reply_to_message:
+        if len(message.command) != 3:
+            return await message.reply_text(_["general_1"])
     user = await extract_user(message)
     token = await int_to_alpha(user.id)
     _check = await get_authuser_names(message.chat.id)
@@ -44,7 +43,7 @@ async def auth(client, message: Message, _):
         return await message.reply_text(_["auth_3"].format(user.mention))
 
 
-@app.on_message(filters.command(["unauth","تنزيل_ادمن"]) & filters.group & ~BANNED_USERS)
+@app.on_message(filters.command(["unauth","تنزيل ادمن"]) & filters.group & ~BANNED_USERS)
 @AdminActual
 async def unauthusers(client, message: Message, _):
     if not message.reply_to_message:
