@@ -14,11 +14,11 @@ from ZeMusic.utils.inline import close_markup
 from config import BANNED_USERS, adminlist
 
 
-@app.on_message(filters.command(["auth","رفع ادمن"]) & filters.group & ~BANNED_USERS)
+@app.on_message(filters.command(["رفع ادمن"]) & filters.group & ~BANNED_USERS)
 @AdminActual
 async def auth(client, message: Message, _):
     if not message.reply_to_message:
-        if len(message.command) != 3:
+        if len(message.command) != 2:
             return await message.reply_text(_["general_1"])
     user = await extract_user(message)
     token = await int_to_alpha(user.id)
@@ -43,7 +43,7 @@ async def auth(client, message: Message, _):
         return await message.reply_text(_["auth_3"].format(user.mention))
 
 
-@app.on_message(filters.command(["unauth","تنزيل ادمن"]) & filters.group & ~BANNED_USERS)
+@app.on_message(filters.command(["تنزيل ادمن"]) & filters.group & ~BANNED_USERS)
 @AdminActual
 async def unauthusers(client, message: Message, _):
     if not message.reply_to_message:
@@ -63,7 +63,7 @@ async def unauthusers(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(["authlist", "authusers", "الادمنيه", "الادمن"]) & filters.group & ~BANNED_USERS
+    filters.command(["الادمنيه", "الادمن"]) & filters.group & ~BANNED_USERS
 )
 @language
 async def authusers(client, message: Message, _):
@@ -84,6 +84,6 @@ async def authusers(client, message: Message, _):
                 j += 1
             except:
                 continue
-            text += f"{j}➤ {user}[<code>{user_id}</code>]\n"
-            text += f"   {_['auth_8']} {admin_name}[<code>{admin_id}</code>]\n\n"
+            text += f"{j} - {user}\n"
+            text += f"   {_['auth_8']}\n {admin_name}\n\n"
         await mystic.edit_text(text, reply_markup=close_markup(_))
