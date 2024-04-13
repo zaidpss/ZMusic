@@ -12,12 +12,12 @@ async def auto_end_stream(_, message: Message):
         return await message.reply_text(usage)
 
     state = message.text.split(None, 1)[1].strip().lower()
-    if state == "تفعيل":
+    if state == "enable" or state == "تفعيل":
         await autoend_on()
         await message.reply_text(
             "تم تفعيل المغادرة التلقائية بنجاح.\n\nسيقوم الحساب المساعد بمغادرة الدردشة تلقائياً عندما لا يوجد أعضاء في المكالمة."
         )
-    elif state == "تعطيل":
+    elif state == "disable" or state == "تعطيل":
         await autoend_off()
         await message.reply_text("تم تعطيل المغادرة التلقائية بنجاح.")
     else:
