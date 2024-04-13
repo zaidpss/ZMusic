@@ -23,7 +23,7 @@ async def useradd(client, message: Message, _):
     await message.reply_text(_["block_2"].format(user.mention))
 
 
-@app.on_message(filters.command(["الغاء حظر","unblock"]) & SUDOERS)
+@app.on_message(filters.command(["الغاء حظر","unblock", "الغاء الحظر"]) & SUDOERS)
 @language
 async def userdel(client, message: Message, _):
     if not message.reply_to_message:
@@ -52,7 +52,7 @@ async def sudoers_list(client, message: Message, _):
             count += 1
         except:
             continue
-        msg += f"{count}➤ {user}\n"
+        msg += f"{count} - {user}\n"
     if count == 0:
         return await mystic.edit_text(_["block_5"])
     else:
