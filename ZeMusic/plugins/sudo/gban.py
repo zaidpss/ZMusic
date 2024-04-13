@@ -68,7 +68,7 @@ async def global_ban(client, message: Message, _):
     await mystic.delete()
 
 
-@app.on_message(filters.command(["الغاء حظر عام"]) & SUDOERS)
+@app.on_message(filters.command(["الغاء حظر عام","الغاء الحظر عام"]) & SUDOERS)
 @language
 async def global_un(client, message: Message, _):
     if not message.reply_to_message:
