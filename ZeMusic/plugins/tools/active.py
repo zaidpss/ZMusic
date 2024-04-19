@@ -13,9 +13,9 @@ from ZeMusic.utils.database import (
 )
 
 
-@app.on_message(filters.command(["activevc", "activevoice", "المكالمات"]) & SUDOERS)
+@app.on_message(filters.command(["activevc", "activevoice", "الاتصالات","المكالمات"]) & SUDOERS)
 async def activevc(_, message: Message):
-    mystic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ʟɪsᴛ...")
+    mystic = await message.reply_text("» جاري البحث عن اتصالات ...")
     served_chats = await get_active_chats()
     text = ""
     j = 0
@@ -37,17 +37,17 @@ async def activevc(_, message: Message):
         except:
             continue
     if not text:
-        await mystic.edit_text(f"» ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ᴏɴ {app.mention}.")
+        await mystic.edit_text(f"» لاتوجد اتصالات الان.\n  {app.mention}.")
     else:
         await mystic.edit_text(
-            f"<b>» ʟɪsᴛ ᴏғ ᴄᴜʀʀᴇɴᴛʟʏ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs :</b>\n\n{text}",
+            f"<b>» الأتصالات النشطة حاليا :</b>\n\n{text}",
             disable_web_page_preview=True,
         )
 
 
-@app.on_message(filters.command(["activev", "activevideo", "المكالمات"]) & SUDOERS)
+@app.on_message(filters.command(["activev", "activevideo", "الفيديوهات"]) & SUDOERS)
 async def activevi_(_, message: Message):
-    mystic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛs ʟɪsᴛ...")
+    mystic = await message.reply_text("» جاري البحث عن فيديوهات متوفرة ...")
     served_chats = await get_active_video_chats()
     text = ""
     j = 0
@@ -69,9 +69,9 @@ async def activevi_(_, message: Message):
         except:
             continue
     if not text:
-        await mystic.edit_text(f"» ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛs ᴏɴ {app.mention}.")
+        await mystic.edit_text(f"» لاتوجد فيديوهات الان.\n  {app.mention}.")
     else:
         await mystic.edit_text(
-            f"<b>» ʟɪsᴛ ᴏғ ᴄᴜʀʀᴇɴᴛʟʏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛs :</b>\n\n{text}",
+            f"<b>» الفيديوهات النشطة حاليا :</b>\n\n{text}",
             disable_web_page_preview=True,
         )
