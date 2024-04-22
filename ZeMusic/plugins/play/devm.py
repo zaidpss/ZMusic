@@ -8,7 +8,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 from pyrogram.errors import MessageNotModified
 from ZeMusic import app
 from config import OWNER_ID, LOGGER_ID
-
+import config
 
 @app.on_message(command(["مطور", "المطور"]))
 async def devid(client: Client, message: Message):
