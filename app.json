@@ -70,11 +70,6 @@
         "value": "",
         "required": false
       },
-      "SUPPORT_CHANNEL": {
-        "description": "رابط قناتك.",
-        "value": "https://t.me/EF_19",
-        "required": true
-      },
       "LOGGER_ID": {
         "description": "ايدي مجموعة السجل الخاص بك.",
         "value": "",
