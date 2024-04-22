@@ -40,7 +40,7 @@ GIT_TOKEN = getenv(
 )  # Fill this variable if your upstream repository is private
 
 CHANNEL_NAME = getenv("CHANNEL_NAME","‹ 𝚂𝚄𝙾𝚁𝙲𝙴 𝙺𝙸𝙽𝙶 ›")
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/EF_19")
+CHANNEL_LINK = getenv("CHANNEL_LINK", "https://t.me/EF_19")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/GY_19")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
@@ -100,10 +100,10 @@ def time_to_seconds(time):
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
 
 
-if SUPPORT_CHANNEL:
-    if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
+if CHANNEL_LINK:
+    if not re.match("(?:http|https)://", CHANNEL_LINK):
         raise SystemExit(
-            "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
+            "[ERROR] - Your CHANNEL_LINK url is wrong. Please ensure that it starts with https://"
         )
 
 if SUPPORT_CHAT:
