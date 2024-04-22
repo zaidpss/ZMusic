@@ -60,6 +60,16 @@
         "value": "",
         "required": false
       },
+      "CHANNEL_NAME": {
+        "description": "اسم قناتك.",
+        "value": "•✯ 𝚂𝚄𝙾𝚁𝙲𝙴 𝙺𝙸𝙽𝙶 ✯•",
+        "required": true
+      },
+      "CHANNEL_LINK": {
+        "description": "رابط قناتك.",
+        "value": "https://t.me/EF_19",
+        "required": true
+      },
       "LOGGER_ID": {
         "description": "ايدي مجموعة السجل الخاص بك.",
         "value": "",
