@@ -29,11 +29,6 @@
         "value": "",
         "required": true
       },
-      "SUPPORT_CHANNEL": {
-        "description": "رابط قناتك.",
-        "value": "https://t.me/EF_19",
-        "required": true
-      },
       "CHANNEL_NAME": {
         "description": "اسم قناتك.",
         "value": "•✯ 𝚂𝚄𝙾𝚁𝙲𝙴 𝙺𝙸𝙽𝙶 ✯•",
@@ -69,6 +64,11 @@
         "description": "اسم التطبيق أول مربع كتبته خلي هنا نفسه وحروف صغيرة.",
         "value": "",
         "required": false
+      },
+      "SUPPORT_CHANNEL": {
+        "description": "رابط قناتك.",
+        "value": "https://t.me/EF_19",
+        "required": true
       },
       "LOGGER_ID": {
         "description": "ايدي مجموعة السجل الخاص بك.",
