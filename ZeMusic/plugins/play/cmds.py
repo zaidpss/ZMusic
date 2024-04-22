@@ -33,7 +33,7 @@ async def zdatsr(client: Client, message: Message):
                         "• اوامــر المطــور •", callback_data="zzzdv"),
                 ],[
                     InlineKeyboardButton(
-                        text=config.CHANNEL_NAME, url=config.SUPPORT_CHANNEL),
+                        text=config.CHANNEL_NAME, url=config.CHANNEL_LINK),
                 ],
             ]
         ),
