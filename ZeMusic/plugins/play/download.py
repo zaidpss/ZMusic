@@ -1,6 +1,6 @@
 import os
 import requests
-
+import config
 import aiohttp
 import aiofiles
 
@@ -70,7 +70,7 @@ async def song_downloader(client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "‹ 𝚂𝚄𝙾𝚁𝙲𝙴 𝙺𝙸𝙽𝙶 ›", url=f"https://t.me/EF_19"),
+                        text=config.CHANNEL_NAME, url=config.SUPPORT_CHANNEL),
                 ],
 
             ]
