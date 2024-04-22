@@ -16,19 +16,19 @@ from random import  choice, randint
 #          
                 
 @app.on_message(
-  command(["مطور اساسي","مطور السورس","مبرمج السورس","المطور الاساسي", "مطور ثانوي", "المطور الثانوي"])
+  command(["المبرمج","مبرمج السورس","مبرمج"])
 )
 async def huhh(client: Client, message: Message):
     dev_id = 5145609515
     dev = await client.get_users(dev_id)
     name = dev.first_name
     usrnam = dev.username
-    bio = dev.bio
+    
     await app.download_media(dev.photo.big_file_id, file_name=os.path.join("downloads", "developer.jpg"))
    
     await message.reply_photo(
         photo="downloads/developer.jpg",
-        caption=f"""<b>⌯ 𝙽𝙰𝙼𝙴 :</b> <a href='https://t.me/{usrnam}'>{name}</a>\n\n<b>⌯ 𝙱𝙸𝙾  :</b> {bio}""",
+        caption=f"""<b>⌯ 𝙽𝙰𝙼𝙴 :</b> <a href='https://t.me/{usrnam}'>{name}</a>\n\n<b>⌯ 𝚄𝚂𝙴𝚁𝙽𝙰𝙼𝙴 :</b> {usrnam}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -36,7 +36,7 @@ async def huhh(client: Client, message: Message):
                          name, url=f"https://t.me/{usrnam}"), 
                  ],[
                    InlineKeyboardButton(
-                        "『 𝙺𝙸𝙽𝙶 𝚂𝙾𝚄𝚁𝙲𝙴 』", url=f"https://t.me/EF_19"),
+                        "•✯ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙺𝙸𝙽𝙶 ✯•", url=f"https://t.me/EF_19"),
                 ],
 
             ]
