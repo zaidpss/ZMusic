@@ -57,7 +57,7 @@
       },
       "CHANNEL_NAME": {
         "description": "اسم قناتك.",
-        "value": "•✯ 𝚂𝚄𝙾𝚁𝙲𝙴 𝙺𝙸𝙽𝙶 ✯•",
+        "value": "𝚂𝚄𝙾𝚁𝙲𝙴 𝙺𝙸𝙽𝙶",
         "required": true
       },
       "CHANNEL_LINK": {
