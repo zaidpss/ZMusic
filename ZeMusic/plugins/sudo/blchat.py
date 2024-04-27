@@ -8,10 +8,10 @@ from ZeMusic.utils.decorators.language import language
 from config import BANNED_USERS
 
 
-@app.on_message(filters.command(["حظر مجموعه" , "حظر مجموعة"]) & SUDOERS)
+@app.on_message(filters.command(["blacklistchat" , "blchat"]) & SUDOERS)
 @language
 async def blacklist_chat_func(client, message: Message, _):
-    if len(message.command) != 3:
+    if len(message.command) != 2:
         return await message.reply_text(_["black_1"])
     chat_id = int(message.text.strip().split()[1])
     if chat_id in await blacklisted_chats():
@@ -28,7 +28,7 @@ async def blacklist_chat_func(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(["الغاء حظر مجموعه", "الغاء حظر مجموعة", "سماح"]) & SUDOERS
+    filters.command(["unblchat", "unblacklistchat", "سماح"]) & SUDOERS
 )
 @language
 async def white_funciton(client, message: Message, _):
