@@ -21,17 +21,7 @@ REPLY_MESSAGE = "<b>- اهلا بك عزيزي اليك قائمه الاوام�
 
 REPLY_MESSAGE_BUTTONS = [
 
-         [
-
-             ("‹ المطور ›"),                   
-
-             ("‹ السورس ›")
-
-          ],
-
           [
-
-             ("‹ ربط القنوات ›"),
 
              ("‹ غنيلي ›")
 
@@ -91,24 +81,24 @@ async def cpanel(_, message: Message):
               reply_markup=reply_markup
         )
 
-@app.on_message(filters.regex("‹ اخفاء الكيبورد ›") & filters.group)
+@app.on_message(filters.regex("‹ اخفاء الكيبورد ›") & filters.private)
 async def down(client, message):
           m = await message.reply("<b>- تم اغلاق الكيبورد.</b>", reply_markup= ReplyKeyboardRemove(selective=True))
 
 
-@app.on_message(filters.group & command("‹ ربط القنوات ›"))
-async def dowhmo(client: Client, message: Message):
-    await message.reply_text("""- هلا والله\n◌<b>عشان تشغل بالقنوات لازم تسوي بعض الخطوات وهي◌</b> :\n\n1 -› تدخل البوت قناتك وترفعه مشرف\n2 -› ترجع للقروب وتكتب { <b>ربط + يوزر القناة</b> }\n3 -› <b>اضغط على زر اوامر التشغيل عشان تعرف كيف تشغل</b>.""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "قناة السورس", url=f"https://t.me/EF_19"),
-                ],[
-                    InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/{app.username}?startgroup=true"),
-                ],
-            ]
-        ),
-        disable_web_page_preview=True
-    )
+#@app.on_message(filters.group & command("‹ ربط القنوات ›"))
+#async def dowhmo(client: Client, message: Message):
+    #await message.reply_text("""- هلا والله\n◌<b>عشان تشغل بالقنوات لازم تسوي بعض الخطوات وهي◌</b> :\n\n1 -› تدخل البوت قناتك وترفعه مشرف\n2 -› ترجع للقروب وتكتب { <b>ربط + يوزر القناة</b> }\n3 -› <b>اضغط على زر اوامر التشغيل عشان تعرف كيف تشغل</b>.""",
+        #reply_markup=InlineKeyboardMarkup(
+            #[
+                #[
+                    #InlineKeyboardButton(
+                        #"قناة السورس", url=f"https://t.me/EF_19"),
+                #],[
+                    #InlineKeyboardButton(
+                        #"• ضيفني لقروبك 🎻", url=f"https://t.me/{app.username}?startgroup=true"),
+                #],
+            #]
+        #),
+        #disable_web_page_preview=True
+    #)
