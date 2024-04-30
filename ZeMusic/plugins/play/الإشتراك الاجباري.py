@@ -4,7 +4,7 @@ from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForb
 from ZeMusic import app
 import config
 
-Muntazer = "e5_51"
+Muntazer = config.CHANNEL_LINK
 nem = config.CHANNEL_NAME
 @app.on_message(filters.incoming & filters.private, group=-1)
 async def must_join_channel(app: Client, msg: Message):
