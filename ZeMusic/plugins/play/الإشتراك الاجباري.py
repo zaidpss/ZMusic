@@ -2,8 +2,10 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForbidden
 from ZeMusic import app
+import config
 
-Muntazer ="EF_19"
+Muntazer = config.CHANNEL_LINK
+nem = config.CHANNEL_NAME
 @app.on_message(filters.incoming & filters.private, group=-1)
 async def must_join_channel(app: Client, msg: Message):
     if not Muntazer:
@@ -13,21 +15,21 @@ async def must_join_channel(app: Client, msg: Message):
             await app.get_chat_member(Muntazer, msg.from_user.id)
         except UserNotParticipant:
             if Muntazer.isalpha():
-                link = "https://t.me/" + Muntazer
+                link = Muntazer
             else:
                 chat_info = await app.get_chat(Muntazer)
                 link = chat_info.invite_link
             try:
                 await msg.reply(
-                    f"~︙عزيزي {msg.from_user.mention} \n~︙عليك الأشتراك في قناة البوت \n~︙قناة البوت : @{Muntazer}.",
+                    f"~︙عزيزي {msg.from_user.mention} \n~︙عليك الأشتراك في قناة البوت \n~︙قناة البوت : <a href='{Muntazer}'>{nem}</a>.",
                     disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup([
-                        [InlineKeyboardButton("< 𝙺𝙸𝙽𝙶 >", url=link)]
+                        [InlineKeyboardButton(nem, url=link)]
                     ])
                 )
                 await msg.stop_propagation()
             except ChatWriteForbidden:
                 pass
     except ChatAdminRequired:
-        print(f"I m not admin in the MUST_JOIN chat {Muntazer}!")
+        print(f"I m not admin in the MUST_JOIN chat <a href='{Muntazer}'>{nem}</a>!")
 
