@@ -26,7 +26,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/EF_19")
+                        text=config.CHANNEL_NAME, url=config.CHANNEL_LINK)
                 ],
             ]
         )
@@ -43,7 +43,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/EF_19")
+                        text=config.CHANNEL_NAME, url=config.CHANNEL_LINK)
                 ],
             ]
         )
@@ -59,7 +59,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/EF_19")
+                        text=config.CHANNEL_NAME, url=config.CHANNEL_LINK)
                 ],
             ]
         )
@@ -75,7 +75,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/EF_19")
+                        text=config.CHANNEL_NAME, url=config.CHANNEL_LINK)
                 ],
             ]
         )
@@ -90,7 +90,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/EF_19")
+                        text=config.CHANNEL_NAME, url=config.CHANNEL_LINK)
                 ],
             ]
         )
@@ -105,7 +105,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/EF_19")
+                        text=config.CHANNEL_NAME, url=config.CHANNEL_LINK)
                 ],
             ]
         )
@@ -120,7 +120,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/EF_19")
+                        text=config.CHANNEL_NAME, url=config.CHANNEL_LINK)
                 ],
             ]
         )
@@ -135,7 +135,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/EF_19")
+                        text=config.CHANNEL_NAME, url=config.CHANNEL_LINK)
                 ],
             ]
         )
@@ -151,7 +151,7 @@ async def ihd(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/EF_19")
+                        text=config.CHANNEL_NAME, url=config.CHANNEL_LINK)
                 ],
             ]
         )
