@@ -4,7 +4,7 @@ from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForb
 from ZeMusic import app
 import config
 
-Muntazer = config.CHANNEL_LINK
+Muntazer = "e5_51"
 nem = config.CHANNEL_NAME
 @app.on_message(filters.incoming & filters.private, group=-1)
 async def must_join_channel(app: Client, msg: Message):
@@ -15,13 +15,13 @@ async def must_join_channel(app: Client, msg: Message):
             await app.get_chat_member(Muntazer, msg.from_user.id)
         except UserNotParticipant:
             if Muntazer.isalpha():
-                link = Muntazer
+                link = "https://t.me/" + Muntazer
             else:
                 chat_info = await app.get_chat(Muntazer)
                 link = chat_info.invite_link
             try:
                 await msg.reply(
-                    f"~︙عزيزي {msg.from_user.mention} \n~︙عليك الأشتراك في قناة البوت \n~︙قناة البوت : <a href='{Muntazer}'>{nem}</a>.",
+                    f"~︙عزيزي {msg.from_user.mention} \n~︙عليك الأشتراك في قناة البوت \n~︙قناة البوت : <a href='https://t.me/{Muntazer}'>{nem}</a>.",
                     disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup([
                         [InlineKeyboardButton(nem, url=link)]
@@ -31,5 +31,5 @@ async def must_join_channel(app: Client, msg: Message):
             except ChatWriteForbidden:
                 pass
     except ChatAdminRequired:
-        print(f"I m not admin in the MUST_JOIN chat <a href='{Muntazer}'>{nem}</a>!")
+        print(f"I m not admin in the MUST_JOIN chat <a href='https://t.me/{Muntazer}'>{nem}</a>!")
 
