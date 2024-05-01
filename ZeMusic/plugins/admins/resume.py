@@ -10,7 +10,7 @@ from config import BANNED_USERS
 
 # قم بتحقق من الدالة AdminRightsCheck وتأكد من أنها موجودة ومستوردة بشكل صحيح
 
-@app.on_message(filters.command(["/resume", "كمل", "استئناف", "إستئناف", "/cresume"], "") & filters.group & ~BANNED_USERS
+@app.on_message(filters.command(["resume", "كمل", "استئناف", "إستئناف", "cresume"], "") & filters.group & ~BANNED_USERS
 )
 @AdminRightsCheck
 async def resume_com(cli, message: Message, _, chat_id):
