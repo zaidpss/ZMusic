@@ -9,8 +9,8 @@ from ZeMusic.utils.inline import close_markup
 from config import BANNED_USERS
 #import config
 
-Nem = config.BOT_NAME + " اسكت"
-Men = config.BOT_NAME + " ايقاف"
+#Nem = config.BOT_NAME + " اسكت"
+#Men = config.BOT_NAME + " ايقاف"
 @app.on_message(
     filters.command(["/end","اسكت","ايقاف", "/stop", "/cend", "/cstop",
                      #Nem,Men
