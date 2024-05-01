@@ -7,10 +7,12 @@ from ZeMusic.utils.database import set_loop
 from ZeMusic.utils.decorators import AdminRightsCheck
 from ZeMusic.utils.inline import close_markup
 from config import BANNED_USERS
+#import config
 
-
+Nem = config.BOT_NAME + " اسكت"
+Men = config.BOT_NAME + " ايقاف"
 @app.on_message(
-    filters.command(["/end","اسكت","ايقاف", "/stop", "/cend", "/cstop"], "") & ~BANNED_USERS
+    filters.command(["/end","اسكت","ايقاف", "/stop", "/cend", "/cstop",Nem,Men], "") & ~BANNED_USERS
 )
 @AdminRightsCheck
 async def stop_music(cli, message: Message, _, chat_id):
