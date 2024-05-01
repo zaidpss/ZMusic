@@ -31,14 +31,14 @@ from config import BANNED_USERS, lyrical
             "play",
             "تشغيل",
             "شغل",
-            "/play",
-            "/vplay",
-            "/cplay",
-            "/cvplay",
-            "/playforce",
-            "/vplayforce",
-            "/cplayforce",
-            "/cvplayforce",
+            "play",
+            "vplay",
+            "cplay",
+            "cvplay",
+            "playforce",
+            "vplayforce",
+            "cplayforce",
+            "cvplayforce",
         ],""
     )
     & ~BANNED_USERS
