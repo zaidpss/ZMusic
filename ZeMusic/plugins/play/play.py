@@ -24,13 +24,14 @@ from ZeMusic.utils.logger import play_logs
 from ZeMusic.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
 
-
+Nem = config.BOT_NAME + " شغل"
 @app.on_message(
     filters.command(
         [
             "play",
             "تشغيل",
             "شغل",
+            Nem,
             "play",
             "vplay",
             "cplay",
