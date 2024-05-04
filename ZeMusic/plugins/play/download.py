@@ -18,8 +18,8 @@ def remove_if_exists(path):
     if os.path.exists(path):
         os.remove(path)
 
-
-@app.on_message(command(["song","/song", "بحث"]))
+Nem = config.BOT_NAME + " ابحث"
+@app.on_message(command(["song","/song", "بحث",Nem]))
 async def song_downloader(client, message: Message):
     query = " ".join(message.command[1:])
     m = await message.reply_text("<b>⇜ جـارِ البحث عـن المقطـع الصـوتـي . . .</b>")
