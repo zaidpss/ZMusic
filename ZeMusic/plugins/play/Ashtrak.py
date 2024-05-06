@@ -5,7 +5,7 @@ from pyrogram.enums import ChatType
 from pyrogram.errors import UserNotParticipant
 from ZeMusic import app
 
-channel = "e5_52"
+channel = config.CHANNEL_LINK
 
 async def subscription(_, __: Client, message: Message):
     user_id = message.from_user.id
@@ -18,7 +18,7 @@ async def subscription(_, __: Client, message: Message):
 subscribed = filters.create(subscription)
 
 # تعريف دالة لمعالجة الأوامر
-@app.on_message(filters.command(["تشغيل", "شغل"],"") & ~subscribed)
+@app.on_message(filters.command(["تشغيل", "شغل",Nem],"") & ~subscribed)
 async def command_handler(_: Client, message: Message):
     if message.chat.type in [ChatType.GROUP, ChatType.SUPERGROUP]:
         user_id = message.from_user.id
@@ -27,7 +27,7 @@ async def command_handler(_: Client, message: Message):
             [Button("اشتراك في القناة", url=f"https://t.me/{channel}")]
         ])
         await message.reply(
-            f"عذرًا عزيزي {user}، عليك الاشتراك في قناة البوت أولاً.",
+            f"◇ عذرًا عزيزي {user} ، عليك الاشتراك في قناة البوت أولاً.",
             reply_markup=markup
         )
         
