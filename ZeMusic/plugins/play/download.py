@@ -18,7 +18,7 @@ def remove_if_exists(path):
     if os.path.exists(path):
         os.remove(path)
         
-link= "https://t.me/" +config.CHANNEL_LINK
+lnk= "https://t.me/" +config.CHANNEL_LINK
 Nem = config.BOT_NAME + " ابحث"
 @app.on_message(command(["song","/song", "بحث",Nem]))
 async def song_downloader(client, message: Message):
@@ -71,7 +71,7 @@ async def song_downloader(client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text=config.CHANNEL_NAME, url=link),
+                        text=config.CHANNEL_NAME, url=lnk),
                 ],
 
             ]
