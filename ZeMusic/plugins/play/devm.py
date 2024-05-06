@@ -10,6 +10,7 @@ from ZeMusic import app
 from config import OWNER_ID, LOGGER_ID
 import config
 
+lnk= "https://t.me/" +config.CHANNEL_LINK
 @app.on_message(command(["مطور", "المطور"]))
 async def devid(client: Client, message: Message):
     usr = await client.get_users(OWNER_ID)
@@ -27,7 +28,7 @@ async def devid(client: Client, message: Message):
                     InlineKeyboardButton(name, url=f"tg://user?id={uid}"),
                 ],[
                     InlineKeyboardButton(
-                        text=config.CHANNEL_NAME, url=config.CHANNEL_LINK),
+                        text=config.CHANNEL_NAME, url=lnk),
                 ],
             ]
         ),
