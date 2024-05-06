@@ -28,7 +28,7 @@ async def zzzback(_, query: CallbackQuery):
                         "• اوامــر المطــور •", callback_data="zzzdv"),
                 ],[
                     InlineKeyboardButton(
-                        text=config.CHANNEL_NAME, url=config.CHANNEL_LINK),
+                        text=config.CHANNEL_NAME, url=lnk),
                 ],
             ]
         ),
