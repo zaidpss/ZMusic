@@ -71,8 +71,8 @@
         "required": true
       },
       "CHANNEL_LINK": {
-        "description": "رابط قناتك.",
-        "value": "https://t.me/EF_19",
+        "description": "يوزر قناتك بدون @.",
+        "value": "EF_19",
         "required": true
       },
       "AUTO_LEAVING_ASSISTANT": {
