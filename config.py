@@ -101,11 +101,6 @@ def time_to_seconds(time):
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
 
 
-if CHANNEL_LINK:
-    if not re.match("(?:http|https)://", CHANNEL_LINK):
-        raise SystemExit(
-            "[ERROR] - Your CHANNEL_LINK url is wrong. Please ensure that it starts with https://"
-        )
 
 if SUPPORT_CHAT:
     if not re.match("(?:http|https)://", SUPPORT_CHAT):
