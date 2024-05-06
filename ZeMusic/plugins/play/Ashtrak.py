@@ -4,6 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup as Markup, InlineKeyboardButton 
 from pyrogram.enums import ChatType
 from pyrogram.errors import UserNotParticipant
 from ZeMusic import app
+import config
 
 channel = config.CHANNEL_LINK
 Nem = config.BOT_NAME + " شغل"
@@ -24,7 +25,7 @@ async def command_handler(_: Client, message: Message):
         user_id = message.from_user.id
         user = message.from_user.first_name
         markup = Markup([
-            [Button("اشتراك في القناة", url=f"https://t.me/{channel}")]
+            [Button(config.CHANNEL_NAME, url=f"https://t.me/{channel}")]
         ])
         await message.reply(
             f"◇ عذرًا عزيزي {user} ، عليك الاشتراك في قناة البوت أولاً.",
